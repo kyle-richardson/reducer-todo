@@ -6,7 +6,6 @@ const TodoList = ()=>{
     const [state, dispatch] = useReducer(reducer, initialState)
     return (
         <div>
-            <h2>TodoList</h2>
             <Form state={state} dispatch={dispatch} />
             {state.todoList.map(listItem => {
                 return (
