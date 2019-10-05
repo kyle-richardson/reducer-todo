@@ -11,15 +11,16 @@ const TodoList = ()=>{
                 return (
                     <div key={listItem.id}>
                         <span >{listItem.completed ? 'X' : null}</span>
-                        <div key={listItem.id}>{listItem.item} ID: {listItem.id}</div>
-                        <button onClick={()=>dispatch({
-                            id: listItem.id,
-                            type: 'REMOVE_ITEM'
-                        })}>Remove</button>
+                        <div key={listItem.id}>{listItem.item}</div>
                         <button onClick={()=>dispatch({
                             id: listItem.id,
                             type: 'COMPLETE_ITEM'
                         })}>Toggle Complete</button>
+                        <button onClick={()=>dispatch({
+                            id: listItem.id,
+                            type: 'REMOVE_ITEM'
+                        })}>Remove</button>
+                       
                     </div>
                 )
             })}
