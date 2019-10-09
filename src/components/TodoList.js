@@ -10,16 +10,22 @@ const TodoList = ()=>{
             {state.todoList.map(listItem => {
                 return (
                     <div key={listItem.id}>
-                        <span >{listItem.completed ? 'X' : null}</span>
-                        <div key={listItem.id}>{listItem.item}</div>
+                        <div className="single-item-line">
+                            <span className="checkmark">{listItem.completed ? 'X' : null}</span>
+                            <div className="item" key={listItem.id}>{listItem.item}</div>
+                        </div>
                         <button onClick={()=>dispatch({
                             id: listItem.id,
                             type: 'COMPLETE_ITEM'
-                        })}>Toggle Complete</button>
+                        })}>
+                            Toggle Complete
+                        </button>
                         <button onClick={()=>dispatch({
                             id: listItem.id,
                             type: 'REMOVE_ITEM'
-                        })}>Remove</button>
+                        })}>
+                            Remove
+                        </button>
                        
                     </div>
                 )

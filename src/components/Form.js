@@ -1,9 +1,10 @@
 import React from "react"
+import {FormContainer} from "../styles/styles.js"
 
 const Form = (props)=>{
     const {state, dispatch} = props
     return (
-        <div className="form-container">
+        <FormContainer className="form-container">
             <form className="form" onSubmit={e=>{
                 e.preventDefault()
                 dispatch({
@@ -25,7 +26,7 @@ const Form = (props)=>{
                     Submit
                 </button>
             </form>
-        </div>
+        </FormContainer>
     )
 }
 
