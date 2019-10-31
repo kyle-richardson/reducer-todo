@@ -3,14 +3,23 @@ import {FormContainer} from "../styles/styles.js"
 
 const Form = (props)=>{
     const {state, dispatch} = props
+    const resetForm = ()=> {
+        dispatch({
+            type: 'INPUT',
+            value: ''
+        })
+    }
     return (
         <FormContainer className="form-container">
             <form className="form" onSubmit={e=>{
                 e.preventDefault()
-                dispatch({
-                    item: `${e.target[0].value}`,
+                const value = e.target[0].value
+                !!value && dispatch({
+                    item: `${value}`,
                     type: 'ADD_ITEM'
-            })}}>
+                })
+                resetForm()
+            }}>
                 <input 
                     className="text-box"
                     type="text" 

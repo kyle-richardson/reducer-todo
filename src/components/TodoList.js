@@ -12,20 +12,20 @@ const TodoList = ()=>{
                     <div key={listItem.id}>
                         <div className="single-item-line">
                             <span className="checkmark">{listItem.completed ? 'X' : null}</span>
-                            <div className="item" key={listItem.id}>{listItem.item}</div>
+                            <span className="item" key={listItem.id}>{listItem.item}</span>
+                            <button onClick={()=>dispatch({
+                                id: listItem.id,
+                                type: 'COMPLETE_ITEM'
+                            })}>
+                                Toggle Complete
+                            </button>
+                            <button onClick={()=>dispatch({
+                                id: listItem.id,
+                                type: 'REMOVE_ITEM'
+                            })}>
+                                Remove
+                            </button>
                         </div>
-                        <button onClick={()=>dispatch({
-                            id: listItem.id,
-                            type: 'COMPLETE_ITEM'
-                        })}>
-                            Toggle Complete
-                        </button>
-                        <button onClick={()=>dispatch({
-                            id: listItem.id,
-                            type: 'REMOVE_ITEM'
-                        })}>
-                            Remove
-                        </button>
                        
                     </div>
                 )
